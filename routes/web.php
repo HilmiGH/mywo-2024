@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Firebase\UserController;
 use App\Http\Controllers\Firebase\ContactController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/test', function () {
-//     return view('guest_website.pages.login');
-// });
+Route::get('/test', function () {
+    return view('guest_website.pages.login');
+});
 
 Route::get('contacts', [ContactController::class, 'index']);
 Route::get('add-contact', [ContactController::class, 'create']);
@@ -31,3 +33,23 @@ Route::put('update-contact/{id}', [ContactController::class, 'update']);
 
 // Route::get('delete-contact/{id}', [ContactController::class, 'destroy']);
 Route::delete('delete-contact/{id}', [ContactController::class, 'destroy']);
+
+
+// Login
+Route::get('/login', function () {
+    return view('auth.login');
+  })->name('login');
+  
+  Route::post('/login', [AuthController::class, 'login'])->name('post.login');
+  
+  // Register
+  Route::get('/register', function () {
+    return view('auth.register');
+  })->name('register');
+  
+  Route::post('/register', [AuthController::class, 'register'])->name('post.register');
+  
+  Route::middleware(['auth'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+  });
