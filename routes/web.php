@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Firebase\UserController;
+use App\Http\Controllers\Firebase\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Route::get('/test', function () {
+//     return view('guest_website.pages.login');
+// });
+
+Route::get('contacts', [ContactController::class, 'index']);
+Route::get('add-contact', [ContactController::class, 'create']);
+Route::post('add-contact', [ContactController::class, 'store']);
+Route::get('edit-contact/{id}', [ContactController::class, 'edit']);
+Route::put('update-contact/{id}', [ContactController::class, 'update']);
+
+// Route::get('delete-contact/{id}', [ContactController::class, 'destroy']);
+Route::delete('delete-contact/{id}', [ContactController::class, 'destroy']);
