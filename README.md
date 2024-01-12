@@ -27,6 +27,19 @@ Finally, run the following commands:
 php artisan serve
 npm run build
 
+Here are a couple of our screenshots:
+
+<p style="text-align: center">Login Page</p>
+
+![image](https://github.com/HilmiGH/mywo-2024/assets/99980714/4bb71906-94e4-476f-9670-8a67dcc8eb64)
+
+<p style="text-align: center">Inventory Management Page</p>
+
+![image](https://github.com/HilmiGH/mywo-2024/assets/99980714/9e498157-11e2-4124-824c-e0224934e6e8)
+
+
+
+
 
 
 
