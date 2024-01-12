@@ -1,3 +1,4 @@
+<b> MYWO: Make Your Work Organized </b>
 This is a website builder app that is still under development. This is also a part of the Hackfest competition 2024.
 
 The app is built to help UMKM and businesses to monitor their performances of marketing in their social media. The main feature of the apps are:
@@ -15,7 +16,8 @@ Our developer team consists of 4 members:
 
 To deploy the app, first, clone this repo.
 
-Next, create your own Firebase realtime database and your personal key.
+Next, create your own Firebase realtime database add a new entry named 'inventory'
+Get your personal key through project settings -> service accounts -> firebase admin SDK and download it.
 Rename the personal key to firebase.json and copy it into the root directory of the project.
 
 Then, inside the .env make these changes:
