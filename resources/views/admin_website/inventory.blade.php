@@ -12,45 +12,45 @@
                 @endif
 
                 <div class="">
-                    <div class="">
-                        <h4>Inventory - Total : {{ $total_objects }}
-                            <a href="{{ url('add-inventory') }}" class="float-right">Add Object</a>
+                    <div class="bg-gray-200 rounded-t-md p-4">
+                        <h4 class="text-xl font-bold">Inventory - Total : {{ $total_objects }}
+                            <a class="float-right text-sm font-normal bg-blue-500 p-2 text-white rounded-md" href="{{ url('add-inventory') }}">Add Object</a>
                         </h4>
                     </div>
                     <div class="">
                         
-                        <table class="">
-                            <thead>
-                                <tr>
-                                    <th>No.</th>
-                                    <th>Object Type</th>
-                                    <th>Object Name</th>
-                                    <th>Object Category</th>
-                                    <th>Object Stock</th>
-                                    <th>Object Price</th>
-                                    <th>Object Desc</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                        <table class="border border-collapse">
+                            <thead class="">
+                                <tr class="border">
+                                    <th class="border p-2">No.</th>
+                                    <th class="border p-2">Object Type</th>
+                                    <th class="border p-2">Object Name</th>
+                                    <th class="border p-2">Object Category</th>
+                                    <th class="border p-2">Object Stock</th>
+                                    <th class="border p-2">Object Price</th>
+                                    <th class="border p-2">Object Desc</th>
+                                    <th class="border p-2">Edit</th>
+                                    <th class="border p-2">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @php $i = 1; @endphp
                                 @forelse ($objects as $key => $item )
                                     <tr>
-                                        <td>{{ $i++ }}</td>
-                                        <td>{{ $item['object_type'] }}</td>
-                                        <td>{{ $item['object_name'] }}</td>
-                                        <td>{{ $item['object_category'] }}</td>
-                                        <td>{{ $item['object_stock'] }}</td>
-                                        <td>{{ $item['object_price'] }}</td>
-                                        <td>{{ $item['object_desc'] }}</td>
-                                        <td><a href="{{ url('edit-inventory/'.$key) }}" class="">Edit</a></td>
-                                        <td>
+                                        <td class="border p-1 text-center">{{ $i++ }}</td>
+                                        <td class="border p-1 text-center">{{ $item['object_type'] }}</td>
+                                        <td class="border p-1 text-center">{{ $item['object_name'] }}</td>
+                                        <td class="border p-1 text-center">{{ $item['object_category'] }}</td>
+                                        <td class="border p-1 text-center">{{ $item['object_stock'] }}</td>
+                                        <td class="border p-1 text-center">{{ $item['object_price'] }}</td>
+                                        <td class="border p-1 text-center">{{ $item['object_desc'] }}</td>
+                                        <td class="border p-1"><a href="{{ url('edit-inventory/'.$key) }}" class="text-sm font-normal bg-green-500 p-2 text-white rounded-md">Edit</a></td>
+                                        <td class="border p-1">
                                             {{-- <a href="{{ url('delete-contact/'.$key) }}" class="">Delete</a> --}}
                                             <form action="{{ url('delete-inventory/'.$key) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="">Delete</button>
+                                                <button type="submit" class="text-sm font-normal bg-red-600 p-2 text-white rounded-md">Delete</button>
                                             </form>
                                         </td>
                                     </tr>
