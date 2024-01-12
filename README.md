@@ -1,3 +1,35 @@
+<b>MYWO: Make Your Work Organized</b> is a website builder app currently under development. It's a part of the Hackfest competition 2024.
+
+The primary objective of this app is to assist UMKM (Small and Medium Enterprises) and businesses in monitoring their social media marketing performance. The key features of the app include:
+- Sales dashboard
+- Website builder
+- Inventory Management
+- Social Media Integration (Bulk Post)
+- Extra Service Subscription
+
+Our developer team consists of 4 members:
+- Fahrul (Hacker)
+- Hilmi (Hacker)
+- Kentaro (Hustler)
+- Qiqi (Hipster)
+
+To deploy the app, first, clone this repo.
+
+Next, create your own Firebase realtime database add a new entry named 'inventory'.
+Get your personal key through project settings -> service accounts -> firebase admin SDK and download it.
+Rename the personal key to firebase.json and copy it into the root directory of the project.
+
+Then, inside the .env make these changes:
+FIREBASE_CREDENTIALS="firebase.json"
+FIREBASE_DATABASE_URL="<write_your_database_url_here>"
+
+Finally, run the following commands:
+php artisan serve
+npm run build
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
