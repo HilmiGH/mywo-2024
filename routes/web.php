@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Firebase\UserController;
 use App\Http\Controllers\Firebase\ContactController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Firebase\InventoryController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -20,16 +20,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('contacts', [ContactController::class, 'index']);
-Route::get('add-contact', [ContactController::class, 'create']);
-Route::post('add-contact', [ContactController::class, 'store']);
-Route::get('edit-contact/{id}', [ContactController::class, 'edit']);
-Route::put('update-contact/{id}', [ContactController::class, 'update']);
-
-// Route::get('delete-contact/{id}', [ContactController::class, 'destroy']);
-Route::delete('delete-contact/{id}', [ContactController::class, 'destroy']);
-
 
 // Login
 Route::get('/login', function () {
@@ -49,3 +39,12 @@ Route::get('/login', function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
   });
+
+Route::get('inventory', [InventoryController::class, 'index']);
+Route::get('add-inventory', [InventoryController::class, 'create']);
+Route::post('add-inventory', [InventoryController::class, 'store']);
+Route::get('edit-inventory/{id}', [InventoryController::class, 'edit']);
+Route::put('update-inventory/{id}', [InventoryController::class, 'update']);
+
+// Route::get('delete-contact/{id}', [InventoryController::class, 'destroy']);
+Route::delete('delete-inventory/{id}', [InventoryController::class, 'destroy']);
