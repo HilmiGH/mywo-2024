@@ -38,13 +38,14 @@ Route::get('/login', function () {
   Route::middleware(['auth'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::get('inventory', [InventoryController::class, 'index']);
+  Route::get('add-inventory', [InventoryController::class, 'create']);
+  Route::post('add-inventory', [InventoryController::class, 'store']);
+  Route::get('edit-inventory/{id}', [InventoryController::class, 'edit']);
+  Route::put('update-inventory/{id}', [InventoryController::class, 'update']);
+
+  // Route::get('delete-contact/{id}', [InventoryController::class, 'destroy']);
+  Route::delete('delete-inventory/{id}', [InventoryController::class, 'destroy']);
   });
 
-Route::get('inventory', [InventoryController::class, 'index']);
-Route::get('add-inventory', [InventoryController::class, 'create']);
-Route::post('add-inventory', [InventoryController::class, 'store']);
-Route::get('edit-inventory/{id}', [InventoryController::class, 'edit']);
-Route::put('update-inventory/{id}', [InventoryController::class, 'update']);
-
-// Route::get('delete-contact/{id}', [InventoryController::class, 'destroy']);
-Route::delete('delete-inventory/{id}', [InventoryController::class, 'destroy']);
