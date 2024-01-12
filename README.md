@@ -1,13 +1,13 @@
 <b>MYWO: Make Your Work Organized</b> is a website builder app currently under development. It's a part of the Hackfest competition 2024.
 
 The primary objective of this app is to assist UMKM (Small and Medium Enterprises) and businesses in monitoring their social media marketing performance. The key features of the app include:
-- Sales dashboard
-- Website builder
+- Sales Dashboard
+- Website Builder
 - Inventory Management
 - Social Media Integration (Bulk Post)
 - Extra Service Subscription
 
-Our developer team consists of 4 members:
+We are the Miwu Team. We consist of 4 members:
 - Fahrul (Hacker)
 - Hilmi (Hacker)
 - Kentaro (Hustler)
@@ -15,8 +15,8 @@ Our developer team consists of 4 members:
 
 To deploy the app, first, clone this repo.
 
-Next, create your own Firebase realtime database add a new entry named 'inventory'.
-Get your personal key through project settings -> service accounts -> firebase admin SDK and download it.
+Next, create your own Firebase realtime database and add a new entry named 'inventory'.
+Get your key through project settings -> service accounts -> firebase admin SDK and download it.
 Rename the personal key to firebase.json and copy it into the root directory of the project.
 
 Then, inside the .env make these changes:
