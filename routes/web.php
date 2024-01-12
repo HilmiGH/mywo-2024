@@ -21,10 +21,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', function () {
-    return view('guest_website.pages.login');
-});
-
 Route::get('contacts', [ContactController::class, 'index']);
 Route::get('add-contact', [ContactController::class, 'create']);
 Route::post('add-contact', [ContactController::class, 'store']);
